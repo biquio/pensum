@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla Curricular</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f4f4f4; }
+    .materia { 
+      display: inline-block; 
+      background: #fff; 
+      border: 1px solid #ccc; 
+      border-radius: 6px;
+      margin: 10px; 
+      padding: 15px; 
+      width: 150px; 
+      cursor: pointer; 
+      box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+    }
+    .materia:hover { background: #e7f3ff; }
+    .detalle { display: none; padding-top: 10px; font-size: 0.9em; color: #333; }
+  </style>
+</head>
+<body>
+  <h1>Malla Curricular</h1>
+  <div class="materia" onclick="toggleDetalle('detalle1')">
+    Matemática I
+    <div id="detalle1" class="detalle">
+      Créditos: 4<br>
+      Prerrequisito: Ninguno<br>
+      Área: Básica
+    </div>
+  </div>
+  
+  <div class="materia" onclick="toggleDetalle('detalle2')">
+    Física I
+    <div id="detalle2" class="detalle">
+      Créditos: 4<br>
+      Prerrequisito: Matemática I<br>
+      Área: Básica
+    </div>
+  </div>
+
+  <script>
+    function toggleDetalle(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
